@@ -1,0 +1,24 @@
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+
+DROP SCHEMA IF EXISTS `currency` ;
+CREATE SCHEMA IF NOT EXISTS `currency` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+USE `currency` ;
+
+-- -----------------------------------------------------
+-- Table `currency`.`barang`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `currency`.`barang` ;
+
+CREATE TABLE IF NOT EXISTS `currency`.`barang` (
+  `idbarang` VARCHAR(12) NOT NULL,
+  `nama` VARCHAR(45) NOT NULL,
+  `harga` DECIMAL(5,3) NOT NULL,
+  PRIMARY KEY (`idbarang`))
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
